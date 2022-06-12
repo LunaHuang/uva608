@@ -225,7 +225,7 @@ void solve_uva_problem(std::istream &is, std::ostream &os)
     std::string input;
     std::getline(is, input);
     int counterfeit_num = stoi(input);
-    while (counterfeit_num >= 0) {
+    while (counterfeit_num > 0) {
         Counterfeit counterfeit(is);
         os << counterfeit.check() << std::endl;
         //	counterfeit.show();
