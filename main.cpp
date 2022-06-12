@@ -231,6 +231,7 @@ void solve_uva_problem(std::istream &is, std::ostream &os)
         //	counterfeit.show();
         counterfeit_num = counterfeit_num - 1;
     }
+    std::cout << std::endl;
 }
 
 int main(int argc, char **argv)
