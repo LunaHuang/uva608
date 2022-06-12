@@ -1,0 +1,20 @@
+cmake_minimum_required(VERSION 3.0.0)
+project(uva608 VERSION 0.1.0)
+
+include(CTest)
+enable_testing()
+find_package(Boost 1.55.0 COMPONENTS filesystem system REQUIRED)
+option(WITH_GTEST "Enable Google Test" ON)
+
+if (WITH_GTEST) 
+    find_package(GTest CONFIG REQUIRED)
+    MESSAGE("Enable Google Test")
+    ADD_DEFINITIONS("-DWITH_GTEST")
+endif()
+
+if (WITH_GTEST) 
+    add_executable(unitest test.cpp)
+    target_link_libraries(unitest GTest::gtest)
+else()
+    add_executable(uva608 main.cpp)
+endif()
